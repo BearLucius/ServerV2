@@ -4,14 +4,17 @@ package bip.online.biplio2024.service;
 
 import bip.online.biplio2024.entity.CityEntity;
 import bip.online.biplio2024.repository.CityRepo;
+import jakarta.validation.Valid;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
+import org.springframework.validation.annotation.Validated;
 
 import java.util.List;
 import java.util.Optional;
 
 @Service
 @AllArgsConstructor
+@Validated
 public class CityService {
     private final CityRepo repo;
 
@@ -23,7 +26,7 @@ public class CityService {
         return repo.findById(id);
     }
 
-    public CityEntity save (CityEntity data){
+    public CityEntity save (@Valid CityEntity data){
         return repo.save(data);
     }
 

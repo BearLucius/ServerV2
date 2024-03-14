@@ -18,7 +18,7 @@ public class AuthorController {
     @GetMapping("/all")
     public ResponseEntity<ListResponse<AuthorEntity>> getAll() {
         return ResponseEntity.ok(
-                new ListResponse<AuthorEntity>(true, "Список акторов: ", service.findAll()));
+                new ListResponse<AuthorEntity>(true, "Список авторов: ", service.findAll()));
     }
 
     @GetMapping
