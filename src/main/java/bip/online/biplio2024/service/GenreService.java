@@ -3,14 +3,17 @@ package bip.online.biplio2024.service;
 
 import bip.online.biplio2024.entity.GenreEntity;
 import bip.online.biplio2024.repository.GenreRepo;
+import jakarta.validation.Valid;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
+import org.springframework.validation.annotation.Validated;
 
 import java.util.List;
 import java.util.Optional;
 
 @Service
 @AllArgsConstructor
+@Validated
 public class GenreService {
     private final GenreRepo repo;
 
@@ -22,7 +25,7 @@ public class GenreService {
         return repo.findById(id);
     }
 
-    public GenreEntity save (GenreEntity data){
+    public GenreEntity save (@Valid GenreEntity data){
         return repo.save(data);
     }
 
